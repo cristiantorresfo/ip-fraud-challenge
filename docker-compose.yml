@@ -1,0 +1,19 @@
+version: '3'
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'  # Mapeo del puerto del contenedor al host
+    links:
+      - mongodb-container
+  mongodb-container:
+    image: mongo:latest
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - '8080:3000'  # Mapeo del puerto del contenedor al host
+
