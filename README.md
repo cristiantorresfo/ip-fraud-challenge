@@ -10,7 +10,7 @@ Este repositorio contiene una aplicación que se puede ejecutar en contenedores 
 
 1. Clona este repositorio en tu máquina local:
  
-  git clone ip-fraud-challenge
+  git clone https://github.com/cristiantorresfo/ip-fraud-challenge.git
   
 2. Ve al directorio del repositorio:
 
@@ -29,6 +29,8 @@ Este comando ejecutará los contenedores en segundo plano (-d) según la configu
 5. Para acceder a la aplicación (cliente) ingresa a http://localhost:8080 (puerto especificado en el archivo docker-compose.yml)
 
 6. Para detener y eliminar los contenedores, ejecuta el siguiente comando:
+
+ docker-compose down
 
 
 
