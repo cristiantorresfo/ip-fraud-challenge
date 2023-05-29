@@ -1,7 +1,3 @@
-body {
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-
-}
 .app {
     text-align: center;
     height: 100%;
@@ -21,8 +17,9 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 40px;
+      margin-top: 5px;
       margin-bottom: 40px;
+      background-color: transparent;
     }
   
     footer {

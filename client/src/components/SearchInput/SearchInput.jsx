@@ -16,20 +16,22 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
  * @returns {JSX.Element} The SearchInput component.
  */
-export const SearchInput =({ ip, setIp, handleSearch,handleKeyPress, isLoading }) => {
+export const SearchInput = ({ ip, setIp, handleSearch, handleKeyPress, isLoading }) => {
     return (
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Ingresa una IP"
-          value={ip}
-          onChange={(e) => setIp(e.target.value)}
-          onKeyDown={handleKeyPress}
-        />
-        <button disabled={isLoading} onClick={handleSearch}>
-        <FontAwesomeIcon icon={faSearch} />
-        </button>
-      </div>
+        <>
+            <h3>Busca cualquier dirección IP/dominio</h3>
+            <div className="search">
+                <input
+                    type="text"
+                    placeholder="Ingresa una IP"
+                    value={ip}
+                    onChange={(e) => setIp(e.target.value)}
+                    onKeyDown={handleKeyPress}
+                />
+                <button disabled={isLoading} onClick={handleSearch}>
+                    <FontAwesomeIcon icon={faSearch} />
+                </button>
+            </div>
+        </>
     );
-  }
-  
+}

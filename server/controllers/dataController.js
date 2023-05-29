@@ -2,14 +2,13 @@ import axios from 'axios';
 import { FraudContext, BlacklistedIp } from '../models/Data.js';
 
 const API_KEY = '2312555476f161ae403b76b505d66e5e';
-const API_KEY_FIXER = 'b93fee7c268a0890d68cb93067bab1bd';
+const API_KEY_FIXER = '160e86b23612724755e62049b0f75da4';
 
 
 
 export const getContext = async (req, res) => {
   const { ip } = req.params;
   const isBlacklisted = await BlacklistedIp.exists({ ip });
-
   // Verificar si el contexto ya existe en la base de datos
   const existingContext = await FraudContext.findOne({ ip });
   if (existingContext && !isBlacklisted) {
@@ -28,8 +27,9 @@ export const getContext = async (req, res) => {
     // Obtener información del país
     const countryApiResponse = await axios.get(`https://restcountries.com/v3.1/alpha/${country_code}`);
     const data = countryApiResponse.data;
+    
     const currencyCode = Object.keys(data[0].currencies)[0];
-
+    
     // Obtener cotización de la moneda en euros
     const currencyApiResponse = await axios.get(`http://data.fixer.io/api/latest?access_key=${API_KEY_FIXER}&symbols=${currencyCode}`);
 

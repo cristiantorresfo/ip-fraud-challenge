@@ -10,9 +10,9 @@
     input[type="text"] {
       padding: 8px;
       border: 1px solid #ccc;
-      border-radius: 20px 0 0 20px; // Aplica el borde redondeado solo en las esquinas izquierdas
-      margin-right: 0px; // Para corregir la separación entre el input y el botón
-      width: 70%;
+      border-radius: 20px 0 0 20px; 
+      margin-right: 0px; 
+      width: 45%;
       &:focus-visible {
         outline-color: #c1e6f0ef;
         outline-width: 5px;
@@ -22,7 +22,7 @@
         width: 100%;
       }
     }
-  
+      
     button {
       padding: 8px 16px;
       border: 1px solid #ccc;
@@ -33,9 +33,12 @@
       margin-left: -1px; // Para corregir la separación entre el input y el botón
   
       &:hover {
-        background-color: #0069d9;
+        background-color: #4895e89e;
       }
     }
   }
   
 
+h3 {
+    color:#01669d;
+}

@@ -30,21 +30,20 @@ function App() {
             setData(undefined); 
             try {
                 const response = await api.get(`/context/${ip}`);
-                setData(response.data);
+                setData(response?.data);
             } catch (error) {
                 console.log(error)
-
-                if (error.response.data.error === 'La IP está en la lista negra.') {
+                if (error?.response?.data?.error === 'La IP está en la lista negra.') {
                     Modal.warning({
                         title: 'Ip en Lista Negra',
                         content: 'La IP ingresada se encuentra en la lista negra'
                     });
-                } else if (error.response.data.error === 'Error al obtener el contexto.') {
-                    Modal.warning({
+                } else if (error?.response?.data?.error === 'Error al obtener el contexto.') {
+                    Modal.error({
                         title: 'Error de búsqueda',
                         content: 'No se ha encontrado información, inténtalo de nuevo'
                     });
-                } else if (error.message === 'Request failed with status code 404') {
+                } else if (error?.message === 'Request failed with status code 404') {
                     Modal.error({
                         title: 'Error en el servidor',
                         content: 'No se ha podido realizar la consulta al servidor, por favor inténtalo de nuevo.'
@@ -60,7 +59,7 @@ function App() {
     const handleAddToBlacklist = async () => {
         setIsOpenModal(false);
         try {
-            const response = await api.post(`/blacklist/${ip}`);
+            const response = await api.post(`/blacklist/${data?.ip}`);
             const onOk = () => {
                 setData();
                 setIp('');
@@ -97,7 +96,7 @@ function App() {
             <div className="app-content">
                 <SearchInput ip={ip} setIp={setIp} handleKeyPress={handleKeyPress} handleSearch={handleSearch} isLoading={isLoading} />
                 <div className="data-list">
-                    {isLoading ? <Spin /> : data ? <IPData data={data} /> : <h3>!Realiza una búsqueda!</h3>}
+                    {isLoading ? <Spin /> : data ? <IPData data={data} /> : <h4>!Realiza una búsqueda!</h4>}
 
                     {data && (
                         <>

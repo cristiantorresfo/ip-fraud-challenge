@@ -16,19 +16,19 @@ export const IPData = ({ data }) => {
         <img src={data?.url_flag} alt="image_flag" />
         <ul>
           <li>
-            <strong>IP:</strong> {data.ip}
+            <strong>IP:</strong> {data?.ip}
           </li>
           <li>
-            <strong>País:</strong> {data.countryName}
+            <strong>País:</strong> {data?.countryName}
           </li>
           <li>
-            <strong>Código ISO:</strong> {data.isoCountryCode}
+            <strong>Código ISO:</strong> {data?.isoCountryCode}
           </li>
           <li>
-            <strong>Moneda Local:</strong> {data.currency}
+            <strong>Moneda Local:</strong> {data?.currency}
           </li>
           <li>
-            <strong>{`Cotización EUR/${data.currency}:`}</strong> {data.eur_rate}
+            <strong>{`Cotización EUR/${data?.currency}:`}</strong> {data?.eur_rate}
           </li>
         </ul>
       </>

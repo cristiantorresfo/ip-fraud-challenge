@@ -10,7 +10,7 @@
   border: 1px solid #ccc;
   border-radius: 20px 0 0 20px;
   margin-right: 0px;
-  width: 70%;
+  width: 45%;
 }
 .search input[type=text]:focus-visible {
   outline-color: rgba(193, 230, 240, 0.937254902);
@@ -31,5 +31,9 @@
   margin-left: -1px;
 }
 .search button:hover {
-  background-color: #0069d9;
+  background-color: rgba(72, 149, 232, 0.6196078431);
+}
+
+h3 {
+  color: #01669d;
 }/*# sourceMappingURL=SearchInput.css.map */
