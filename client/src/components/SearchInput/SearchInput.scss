@@ -1,22 +1,36 @@
+  
 .search {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    justify-content: center;
+    width: 90%;
+   
   
     input[type="text"] {
       padding: 8px;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-right: 10px;
+      border-radius: 20px 0 0 20px; // Aplica el borde redondeado solo en las esquinas izquierdas
+      margin-right: 0px; // Para corregir la separación entre el input y el botón
+      width: 70%;
+      &:focus-visible {
+        outline-color: #c1e6f0ef;
+        outline-width: 5px;
+    }
+
+      @media screen and (max-width: 500px) {
+        width: 100%;
+      }
     }
   
     button {
       padding: 8px 16px;
+      border: 1px solid #ccc;
       background-color: #007bff;
       color: #fff;
-      border: none;
-      border-radius: 4px;
+      border-radius: 0 20px 20px 0; // Aplica el borde redondeado solo en las esquinas derechas
       cursor: pointer;
+      margin-left: -1px; // Para corregir la separación entre el input y el botón
   
       &:hover {
         background-color: #0069d9;
@@ -24,3 +38,4 @@
     }
   }
   
+

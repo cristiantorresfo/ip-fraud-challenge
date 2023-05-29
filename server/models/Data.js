@@ -7,6 +7,7 @@ const fraudContextSchema = new mongoose.Schema({
   countryCode: String,
   currency: String,
   eur_rate: Number,
+  url_flag:String
 });
 
 const blacklistedIpSchema = new mongoose.Schema({

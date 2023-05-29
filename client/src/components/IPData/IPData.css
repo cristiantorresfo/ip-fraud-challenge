@@ -1,14 +1,20 @@
+@charset "UTF-8";
 .data-list {
   text-align: left;
   background-color: #f5f5f5;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 10px;
+  padding: 20px;
   margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra para dar profundidad */
+}
+.data-list img {
+  width: 60px;
 }
 .data-list h2 {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
+  color: #333; /* Puedes ajustar el color del título según tu diseño */
 }
 .data-list ul {
   list-style: none;
@@ -18,6 +24,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  font-size: 16px; /* Ajusta el tamaño de fuente de los elementos de la lista */
 }
 .data-list ul li:last-child {
   margin-bottom: 0;
@@ -27,13 +34,13 @@
   font-weight: bold;
 }
 .data-list button {
-  padding: 8px 16px;
+  padding: 12px 24px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .data-list button:hover {
   background-color: #0069d9;

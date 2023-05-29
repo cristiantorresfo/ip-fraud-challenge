@@ -33,14 +33,14 @@ export const getContext = async (req, res) => {
     // Obtener cotización de la moneda en euros
     const currencyApiResponse = await axios.get(`http://data.fixer.io/api/latest?access_key=${API_KEY_FIXER}&symbols=${currencyCode}`);
 
-    // Guardar el contexto en la base de datos
     const newContext = new FraudContext({
       ip,
       countryName: country_name,
       isoCountryCode: data[0].cioc,
       countryCode: country_code,
       currency: currencyCode,
-      eur_rate: currencyApiResponse.data.rates[currencyCode]
+      eur_rate: currencyApiResponse.data.rates[currencyCode],
+      url_flag:data[0].flags.png
     });
 
     await newContext.save();
@@ -55,13 +55,11 @@ export const addToBlacklist = async (req, res) => {
   const { ip } = req.params;
 
   try {
-    // Verificar si la IP ya está en la lista negra
     const existingIp = await BlacklistedIp.findOne({ ip });
     if (existingIp) {
       return res.status(400).json({ error: 'La IP ya está en la lista negra.' });
     }
 
-    // Guardar la IP en la lista negra
     const newBlacklistedIp = new BlacklistedIp({ ip });
     await newBlacklistedIp.save();
     res.json({ success: true, message: 'IP añadida a la lista negra.' });
