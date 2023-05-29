@@ -5,7 +5,6 @@ const API_KEY = '2312555476f161ae403b76b505d66e5e';
 const API_KEY_FIXER = '160e86b23612724755e62049b0f75da4';
 
 
-
 export const getContext = async (req, res) => {
   const { ip } = req.params;
   const isBlacklisted = await BlacklistedIp.exists({ ip });
